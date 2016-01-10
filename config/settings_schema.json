@@ -954,23 +954,6 @@
         "label": "Custom logo width (in pixels)"
       },
       {
-        "type": "header",
-        "content": "Favicon"
-      },
-      {
-        "type": "checkbox",
-        "id": "favicon_enable",
-        "label": "Use a custom icon"
-      },
-      {
-        "type": "image",
-        "id": "favicon.png",
-        "label": "Icon",
-        "max-width": 16,
-        "max-height": 16,
-        "info": "16 x 16px .png required"
-      },
-      {
         "type": "checkbox",
         "id": "header_search_enable",
         "label": "Show a search icon"
