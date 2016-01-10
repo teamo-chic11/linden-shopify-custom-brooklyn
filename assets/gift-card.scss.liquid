@@ -17,7 +17,7 @@ $colorBody: {{ settings.color_body_bg }};
 $colorBorder: {{ settings.color_borders }};
 
 // Gift Card Colors
-$colorGiftText: #999; // note, this is always on a white background
+$colorGiftText: {{ settings.color_body_text }}; // note, this is always on a white background
 $colorGiftBorder: {{ settings.color_primary }};
 
 // Sizes
@@ -54,10 +54,6 @@ $gutter: 30px;
 /*============================================================================
   #Base Styles
 ==============================================================================*/
-header, nav, section, article, aside, footer {
-  display:block;
-}
-
 .template-giftcard,
 .template-giftcard body {
   background: $colorBody;
@@ -220,7 +216,7 @@ header, nav, section, article, aside, footer {
   padding: .4em .5em;
   display: inline-block;
   vertical-align: baseline;
-  color: #777;
+  color: $colorGiftText;
   line-height: 1;
 
   .disabled & {

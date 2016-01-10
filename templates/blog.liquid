@@ -1,88 +1,80 @@
 <!-- /templates/blog.liquid -->
-{% comment %}
-
-  Loop through a defined number of articles with the 'paginate' tag.
-  Don't forget to close the tag after your loop.
-
-{% endcomment %}
-
 {% paginate blog.articles by 5 %}
 
-{% include 'breadcrumb' %}
+<div class="grid">
 
-{% comment %}
-  This template is also used for listing out articles of a specific tag.
-  You can change layouts or styles by checking if current_tags is true.
-{% endcomment %}
-<div class="grid--rev">
+  <div class="grid__item large--five-sixths push--large--one-twelfth">
 
-  <div class="grid__item large--three-quarters">
-
-    {% if current_tags %}
-      <h1>{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}</h1>
-    {% else %}
-      <h1>{{ blog.title }}</h1>
-    {% endif %}
-
-    {% comment %}
-      Loop through each article in your blog. This is limited to what you set for pagination above.
-
-      For more info on article liquid tags:
-        - http://docs.shopify.com/themes/liquid-variables/article
-    {% endcomment %}
+    <header class="section-header text-center">
+      <h1>
+        {% if current_tags %}
+          {{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}
+        {% else %}
+          {{ blog.title }}
+        {% endif %}
+        <a href="{{ shop.url }}{{ blog.url }}.atom" class="icon-fallback-text rss-link">
+          <span class="icon icon-rss" aria-hidden="true"></span>
+          <span class="fallback-text">RSS</span>
+        </a>
+      </h1>
+      <hr class="hr--small">
+    </header>
 
     {% for article in blog.articles %}
-      <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-      {% capture author %}<strong>{{ article.author }}</strong>{% endcapture %}
-      {% capture date %}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{% endcapture %}
-      <p>{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</p>
 
-      {% comment %}
-        Add a surrounding div with class 'rte' to anything that will come from the rich text editor.
-        Since this is just a listing page, you can either use the excerpt or truncate the full article.
-      {% endcomment %}
-      <div class="rte">
-        {% if article.excerpt.size > 0 %}
-          {{ article.excerpt }}
-        {% else %}
-          <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
-        {% endif %}
-      </div>
+      {% assign article_content = article.excerpt_or_content %}
+      {% assign featured_image_src = '' %}
 
-      {% comment %}
-        Show off meta information like number of comments and tags.
-      {% endcomment %}
-      <ul class="inline-list">
-        {% if blog.comments_enabled? %}
-        <li>
-          <a href="{{ article.url }}#comments">
-            {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
-          </a>
-        </li>
-        {% endif %}
+      {% if article.image %}
+        {% assign featured_image_src = article | img_url: '1024x1024' %}
+      {% elsif article_content contains '<img' %}
+        {% assign featured_image_src = article_content | split: 'src="' %}
+        {% assign featured_image_src = featured_image_src[1] | split: '"' | first %}
+      {% endif %}
 
-        {% include 'tags-article' %}
-      </ul>
+      <article class="article grid small--text-center">
 
-      <p><a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a></p>
+        {% unless featured_image_src == blank %}
+          <div class="grid__item">
+            <a class="article__featured-image" href="{{ article.url }}">
+              {{ featured_image_src | img_tag: article.title }}
+            </a>
+          </div>
+        {% endunless %}
 
-      {% unless forloop.last %}<hr>{% endunless %}
+        <div class="grid__item large--two-tenths push--large--one-tenth">
+          <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" class="date">{{ article.published_at | date: format: 'month_day_year' }}</time>
+          <hr class="hr--small hr--left small--hide">
+        </div>
+        <div class="grid__item large--six-tenths push--large--one-tenth">
+          <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+          <div class="rte rte--indented-images">
+            {{ article_content | strip_html | truncatewords: 120 }}
+          </div>
+
+          <p>
+            <a href="{{ article.url }}" class="text-link">{{ 'blogs.article.read_more' | t }} <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
+          </p>
+
+          {% if article.tags.size > 0 %}
+            <ul class="tags tags--article inline-list">
+              {% include 'tags-article' %}
+            </ul>
+          {% endif %}
+        </div>
+      </article>
+
+      {% unless forloop.last %}<hr class="hr--clear">{% endunless %}
 
     {% endfor %}
 
     {% if paginate.pages > 1 %}
-      <hr>
       <div class="pagination">
-        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+        {{ paginate | default_pagination | replace: '&laquo; Previous', '<span class="icon icon-arrow-left" aria-hidden="true"></span>' | replace: 'Next &raquo;', '<span class="icon icon-arrow-right" aria-hidden="true"></span>' }}
       </div>
     {% endif %}
 
   </div>
-
-  <div class="grid__item large--one-quarter">
-    {% include 'blog-sidebar' %}
-  </div>
-
 </div>
 
 {% endpaginate %}

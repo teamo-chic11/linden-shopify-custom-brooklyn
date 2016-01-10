@@ -4,7 +4,10 @@
 
   <div class="grid__item large--one-third push--large--one-third text-center">
 
-    <h1>{{ 'customer.register.title' | t }}</h1>
+    <header class="section-header">
+      <h1>{{ 'customer.register.title' | t }}</h1>
+      <hr class="hr--small">
+    </header>
 
     <div class="form-vertical">
       {% form 'create_customer' %}
