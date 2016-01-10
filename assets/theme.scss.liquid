@@ -2336,6 +2336,24 @@ $slick-opacity-not-active: 0.25;
 }
 
 /*================ Module | Theme Header and Navigation Overrides ================*/
+.header-wrapper {
+  background-color: $colorPrimary;
+
+  .template-index & {
+    background-color: transparent;
+  }
+
+  .icon:before {
+    line-height: inherit;
+  }
+}
+
+@include at-query($min, $large) {
+  .site-header {
+    padding-bottom: 15px;
+  }
+}
+
 @include at-query($max, $medium) {
   .site-header {
     padding: 0;
@@ -2427,14 +2445,19 @@ $slick-opacity-not-active: 0.25;
   @include transition('color 0.2s, opacity 0.1s');
   @include accentFontStack;
   font-size: em(16px);
+  color: #fff;
 
-  .is-light & {
+  &:hover {
     color: #fff;
   }
 
   .is-dark & {
     color: #000;
   }
+}
+
+.cart-link__bubble {
+  background-color: lighten($colorPrimary, 12%);
 }
 
 .site-nav--has-dropdown {
