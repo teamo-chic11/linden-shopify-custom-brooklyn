@@ -233,6 +233,26 @@
             "group": "Sans-serif | Google Web Fonts"
           },
           {
+            "value": "Google_Josefin+Sans_400_sans",
+            "label": "Josefin Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Josefin+Sans_300_sans",
+            "label": "Josefin Sans Light",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Josefin+Sans_100_sans",
+            "label": "Josefin Sans Thin",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Sofia_400_sans",
+            "label": "Sofia",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
             "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
             "label": "Big Calson",
             "group": "Serif"
@@ -353,6 +373,26 @@
           {
             "value": "34px",
             "label": "34px"
+          },
+          {
+            "value": "42px",
+            "label": "42px"
+          },
+          {
+            "value": "48px",
+            "label": "48px"
+          },
+          {
+            "value": "52px",
+            "label": "52px"
+          },
+          {
+            "value": "60px",
+            "label": "60px"
+          },
+          {
+            "value": "72px",
+            "label": "72px"
           }
         ]
       },
@@ -493,6 +533,21 @@
           {
             "value": "Google_Ubuntu_700_sans",
             "label": "Ubuntu Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Josefin+Sans_400_sans",
+            "label": "Josefin Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Josefin+Sans_600_sans",
+            "label": "Josefin Sans Semi-Bold",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Google_Josefin+Sans_700_sans",
+            "label": "Josefin Sans Bold",
             "group": "Sans-serif | Google Web Fonts"
           },
           {
@@ -717,6 +772,11 @@
             "group": "Sans-serif | Google Web Fonts"
           },
           {
+            "value": "Google_Josefin+Sans_400_sans",
+            "label": "Josefin Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
             "value": "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
             "label": "Big Calson",
             "group": "Serif"
@@ -831,8 +891,20 @@
             "label": "16px"
           },
           {
-            "value": "17px",
-            "label": "17px"
+            "value": "18px",
+            "label": "18px"
+          },
+          {
+            "value": "20px",
+            "label": "20px"
+          },
+          {
+            "value": "22px",
+            "label": "22px"
+          },
+          {
+            "value": "24px",
+            "label": "24px"
           }
         ]
       },
