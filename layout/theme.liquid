@@ -557,7 +557,7 @@
           {% endif %}
 
           <div class="grid__item {{ footer_column_width }} {% if num_footer_columns == 1 %}text-center{% else %}large--text-right{% endif %}">
-            <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}<br>{{ powered_by_link }}</p>
+            <p>&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}</p>
             {% unless shop.enabled_payment_types == empty %}
               <ul class="inline-list payment-icons">
                 {% for type in shop.enabled_payment_types %}
