@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273 78">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 78">
   <style type="text/css">
     <![CDATA[
     path {
       fill: #fff;
+    }
+    #square {
+      transform: translate(0,0);
+    }
+    @media screen and (max-height: 40px) {
+      #square {
+        transform: translate(98px);
+      }
+      #linden, #ceramics {
+        opacity: 0;
+      }
     }
     ]]>
   </style>
