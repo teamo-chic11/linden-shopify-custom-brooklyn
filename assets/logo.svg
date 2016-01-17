@@ -18,6 +18,14 @@
         transform: translate(202px, -23px);
       }
     }
+    @media screen and (max-width: 250px) and (min-height: 60px) {
+      #square {
+        transform: translate(180px, -19px) scale(1.5);
+      }
+      #linden, #ceramics {
+        opacity: 0;
+      }
+    }
     ]]>
   </style>
   <g id="square">

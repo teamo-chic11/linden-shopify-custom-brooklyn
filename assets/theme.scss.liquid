@@ -200,6 +200,7 @@ $max: max-width;
 
 $viewportIncrement: 1px;
 $siteWidth: 1050px;
+$logoBreak: 545px;
 $small: 590px;
 $medium: 768px;
 $large: 769px;
@@ -292,6 +293,8 @@ $customSelectHeight: 46px;
 
 // Logo size
 $logoMaxWidth: {{ settings.logo_max_width | default: '180' | remove: 'px' | append: 'px'}};
+$logoHeight: 60px;
+$logoHeightSmall: 40px;
 
 // Z-index
 $zindexNavDropdowns: 5;
@@ -2371,16 +2374,17 @@ $slick-opacity-not-active: 0.25;
 
 /*================ Logo Image ================*/
 .site-header__logo-link > object {
-  height: 60px;
+  height: $logoHeight;
   display: block;
 
   @include at-query($max, $large) {
-    height: 40px;
+    height: $logoHeightSmall;
     margin: 0 auto;
   }
 
-  @include at-query($max, 545px) {
+  @include at-query($max, $logoBreak) {
     width: 100%;
+    height: $logoHeight;
   }
 }
 
