@@ -919,34 +919,9 @@
     "name": "Header",
     "settings": [
       {
-        "type": "header",
-        "content": "Logo"
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_use_image",
-        "label": "Use a custom logo"
-      },
-      {
-        "type": "image",
-        "id": "logo.png",
-        "label": "Logo image",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "450px wide recommended"
-      },
-      {
         "type": "checkbox",
         "id": "logo_use_inverted",
         "label": "Use an inverted logo"
-      },
-      {
-        "type": "image",
-        "id": "logo-inverted.png",
-        "label": "Inverted logo",
-        "max-width": 450,
-        "max-height": 200,
-        "info": "Use this with dark slideshow images for better visibility"
       },
       {
         "type": "text",

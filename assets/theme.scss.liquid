@@ -2370,6 +2370,16 @@ $slick-opacity-not-active: 0.25;
 }
 
 /*================ Logo Image ================*/
+.site-header__logo-link > object {
+  height: 60px;
+  display: block;
+
+  @include at-query($max, $large) {
+    height: 40px;
+    margin: 0 auto;
+  }
+}
+
 .site-header__logo .logo--has-inverted {
   @include transition(all 0.2s);
 

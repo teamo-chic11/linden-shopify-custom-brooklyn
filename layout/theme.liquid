@@ -198,21 +198,17 @@
               {% else %}
                 <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
               {% endif %}
-                {% if settings.logo_use_image %}
-                  {% comment %}
-                    .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
-                  {% endcomment %}
-                  {% assign logo_inverted_url = 'logo-inverted.png' | asset_url %}
-                  <a href="/" itemprop="url" class="site-header__logo-link{% if settings.logo_use_inverted %} logo--has-inverted{% endif %}">
-                    <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+                {% comment %}
+                  .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
+                {% endcomment %}
+                {% assign logo_inverted_url = 'logo-inverted.png' | asset_url %}
+                <a href="/" itemprop="url" class="site-header__logo-link{% if settings.logo_use_inverted %} logo--has-inverted{% endif %}">
+                  <object type="image/svg+xml" data="{{ 'logo.svg' | asset_url }}" itemprop="logo">{{ shop.name }}</object>
+                </a>
+                {% if settings.logo_use_inverted %}
+                  <a href="/" itemprop="url" class="logo--inverted">
+                    <object type="image/svg+xml" data="{{ 'logo-inverted.svg' | asset_url }}" itemprop="logo">{{ shop.name }}</object>
                   </a>
-                  {% if settings.logo_use_inverted %}
-                    <a href="/" itemprop="url" class="logo--inverted">
-                      <img src="{{ 'logo-inverted.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
-                    </a>
-                  {% endif %}
-                {% else %}
-                  <a href="/" itemprop="url">{{ shop.name }}</a>
                 {% endif %}
               {% if template == 'index' %}
                 </h1>
