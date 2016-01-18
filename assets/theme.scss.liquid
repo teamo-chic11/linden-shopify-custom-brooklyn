@@ -231,7 +231,7 @@ $colorBtnPrimaryHover: lighten($colorBtnPrimary, 12%);
 $colorBtnPrimaryActive: adaptive-color($colorPrimary, 24%);
 $colorBtnPrimaryText: color-control($colorPrimary);
 
-$colorBtnSecondary: $colorSecondary;
+$colorBtnSecondary: {{ settings.color_secondary_buttons }};
 $colorBtnSecondaryHover: lighten($colorBtnSecondary, 10%);
 $colorBtnSecondaryActive: adaptive-color($colorSecondary, 10%);
 $colorBtnSecondaryText: color-control($colorSecondary);
@@ -780,6 +780,10 @@ hr {
 .hr--left {
   margin-left: 0;
   margin-right: 0;
+}
+
+.social-icons .icon, .payment-icons {
+  color: $colorBtnSecondary;
 }
 
 /*================ Table styles ================*/
@@ -1361,7 +1365,8 @@ a {
   @include accentFontStack;
   padding: 12px 20px;
   font-size: em(16px);
-  line-height: 16px;
+  height: 45px;
+  line-height: 1.45;
 }
 
 .input-group .btn,
@@ -2945,7 +2950,7 @@ button.mfp-arrow {
 
 .grid-product__title {
   @include bodyFontItalic;
-  font-size: em(floor($baseFontSize * 1.25));  //20px based on 16px base font size
+  font-size: em($baseFontSize);
 }
 
 .grid-product__vendor {
@@ -2957,7 +2962,7 @@ button.mfp-arrow {
 
 .grid-product__price {
   @include accentFontStack;
-  font-size: em(14px);
+  font-size: em(16px);
 }
 
 .grid-product__price-min {
@@ -3144,6 +3149,12 @@ button.mfp-arrow {
   width: 200px;
   border-radius: 100px;
   margin-bottom: 10px;
+}
+
+// product page
+.product-single__price {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 // non-ajax cart
