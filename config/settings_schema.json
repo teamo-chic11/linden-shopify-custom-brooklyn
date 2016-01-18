@@ -49,6 +49,12 @@
       },
       {
         "type": "color",
+        "id": "color_secondary_buttons",
+        "label": "Secondary buttons",
+        "default": "#dcdcdc"
+      },
+      {
+        "type": "color",
         "id": "color_secondary",
         "label": "Links and accents",
         "default": "#dcdcdc"

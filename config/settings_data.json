@@ -2,8 +2,9 @@
   "current": {
     "color_body_bg": "#ffffff",
     "color_body_text": "#1c1d1d",
-    "color_borders": "#1c1d1d",
+    "color_borders": "#cac2c7",
     "color_primary": "#462334",
+    "color_secondary_buttons": "#5b5157",
     "color_secondary": "#462334",
     "color_product_background": "#f7f7f7",
     "color_sale_tag": "#990000",
