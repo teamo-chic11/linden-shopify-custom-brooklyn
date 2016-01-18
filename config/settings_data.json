@@ -98,7 +98,7 @@
     "share_twitter": true,
     "share_pinterest": true,
     "share_fancy": true,
-    "share_google": true,
+    "share_google": false,
     "checkout_use_header_image": true,
     "checkout_logo": "checkout_logo.png",
     "checkout_logo_position": "left",

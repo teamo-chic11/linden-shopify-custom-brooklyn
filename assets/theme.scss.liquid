@@ -293,7 +293,7 @@ $customSelectHeight: 46px;
 
 // Logo size
 $logoMaxWidth: {{ settings.logo_max_width | default: '180' | remove: 'px' | append: 'px'}};
-$logoHeight: 60px;
+$logoHeight: 50px;
 $logoHeightSmall: 40px;
 
 // Z-index
@@ -2391,7 +2391,7 @@ $slick-opacity-not-active: 0.25;
 
   @include at-query($max, $logoBreak) {
     width: 100%;
-    height: $logoHeight;
+    height: $logoHeight + 10px;
   }
 }
 
