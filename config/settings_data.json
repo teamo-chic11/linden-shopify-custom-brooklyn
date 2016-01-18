@@ -21,7 +21,7 @@
     "type_accent_family": "Google_Josefin+Sans_700_sans",
     "type_accent_transform": true,
     "type_accent_spacing": true,
-    "type_base_family": "Google_Josefin+Sans_400_sans",
+    "type_base_family": "Google_Josefin+Sans_400,400italic_sans",
     "type_base_size": "20px",
     "type_base_italize_titles": true,
     "logo_use_inverted": false,
