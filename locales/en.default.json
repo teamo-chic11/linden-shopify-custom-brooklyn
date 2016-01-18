@@ -77,7 +77,7 @@
       "update": "Update Cart",
       "checkout": "Check Out",
       "empty": "Your cart is currently empty.",
-      "continue_browsing_html": "Continue browsing <a href=\"\/collections\/all\">here<\/a>.",
+      "continue_browsing_html": "Continue browsing <a href=\"\/collections\/all\">here <span class=\"icon icon-arrow-right\" aria-hidden=\"true\"><\/span><\/a>",
       "close_cart": "Close Cart"
     },
     "label": {
